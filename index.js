@@ -21,7 +21,9 @@ app.use(express.json());
 app.use('/api/users',UserRoute);
 app.use('/api/jobs',JobsRoute);
 
+const PORT = process.env.PORT || 5000;
 
-app.listen(process.env.PORT,()=>{
-    console.log(`app is listen at ${process.env.PORT}`);
-})
+// Start server
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+});

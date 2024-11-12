@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose  = require('mongoose');
+const applicationRoutes = require('./Routes/ApplicationRoutes')
 const UserRoute = require('./Routes/UserRoutes');
 const JobsRoute = require('./Routes/JobsRoutes');
 const app = express();
@@ -20,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/users',UserRoute);
 app.use('/api/jobs',JobsRoute);
-
+app.use('/api/applications', applicationRoutes);
 const PORT = process.env.PORT || 5000;
 
 // Start server
